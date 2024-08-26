@@ -14,3 +14,8 @@ sonar.projectKey=my:project
  
 # Encoding of the source code. Default is default system encoding
 #sonar.sourceEncoding=UTF-8
+docker run \
+    --rm \
+    -e SONAR_HOST_URL="http://${SONARQUBE_URL}"  \
+    -v "${YOUR_REPO}:/usr/src" \
+    sonarsource/sonar-scanner-cli
